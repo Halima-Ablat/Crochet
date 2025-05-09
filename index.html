@@ -13,34 +13,39 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&family=Shadows+Into+Light&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-fluid px-5 py-3">
+    <div class="container-fluid py-3" id="header">
       <div class="row d-flex align-items-center">
         <div class="col-12 col-md-6">
-          <h3 class="text-center text-md-start">Toyland</h3>
+          <h2 class="text-center">Toyland</h2>
         </div>
         <div class="col-12 col-md-6 d-flex gap-3 justify-content-center">
-          <p>Home</p>
-          <p>About</p>
-          <p>Services</p>
-          <p>Portfolio</p>
-          <p>Contact</p>
+          <a href="#header" class="text-dark text-decoration-none navbar-link"
+            >Home</a
+          >
+
+          <a href="#service" class="text-dark text-decoration-none navbar-link"
+            >Services</a
+          >
+          <a href="#my-work" class="text-dark text-decoration-none navbar-link"
+            >My work</a
+          >
+          <a href="#contact" class="text-dark text-decoration-none navbar-link"
+            >Contact</a
+          >
+          <a href="#" class="text-dark text-decoration-none navbar-link"
+            >Cart</a
+          >
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-5" id="about">
       <div class="d-flex flex-wrap justify-content-around gap-5">
         <img src="images/20250125_193340.jpg" alt="profile" class="profile" />
         <div style="max-width: 400px">
-          <h3>About Me</h3>
+          <h3 class="pt-3">About Me</h3>
           <p class="mt-3">
             Hi, I'm Adeena! I started crocheting when i was 8 years old, and now
             at 10, it's something i do almost every day! I love how fun and
@@ -91,7 +96,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <div>
+    <div id="service">
       <h3 class="text-center">My Services</h3>
       <div class="d-flex justify-content-center mt-3">
         <div class="services">
@@ -133,7 +138,7 @@
         </div>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-5" id="my-work">
       <h3 class="text-center">My Work</h3>
       <div class="crochet-container mt-3">
         <img
@@ -166,28 +171,84 @@
           alt="my-crochet"
           class="my-crochet shadow-lg"
         />
+        <div id="more-images" class="crochet-container" style="display: none">
+          <img
+            src="images/image 4.jpeg"
+            alt="my-crochet"
+            class="my-crochet shadow-lg"
+          />
+          <img
+            src="images/image 4.jpeg"
+            alt="my-crochet"
+            class="my-crochet shadow-lg"
+          />
+          <img
+            src="images/image 4.jpeg"
+            alt="my-crochet"
+            class="my-crochet shadow-lg"
+          />
+        </div>
       </div>
     </div>
     <div class="d-flex justify-content-center mt-3">
-      <button >See more</button>
+      <button id="see-more-btn">See more</button>
     </div>
-    <div class=" my-5 contact">
-      <div class="details">
-        <h3 class="contact-me">Contact Me</h3>
+    <div class="contact container-fluid mt-3" id="contact" >
+      <div class="details text-center">
+        <h3 class="contact-me ">Contact Me</h3>
         <p>✉️ crochet@hotmail.com</p>
         <p>📞 123456789</p>
       </div>
       <div class="details">
-        <form action="index.html" method="post">
-          <input type="text" placeholder="Your Name">
-          <input type="text" placeholder="Your Email">
-          <textarea placeholder="Your Message"></textarea>
-          <input type="submit" value="Submit" class="submit">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" />
+          <input type="text" name="Email" placeholder="Your Email" />
+          <textarea
+            name="Message"
+            rows="6"
+            placeholder="Your Message"
+          ></textarea>
+          <input type="submit" value="Submit" class="submit" />
         </form>
+        <span id="message"></span>
       </div>
     </div>
     <footer class="text-center">
-      Copyright @ Toyland.Made with💓by Adeena
+      Copyright © Toyland.Made with💓by Adeena
     </footer>
+
+    <script>
+      document
+        .getElementById("see-more-btn")
+        .addEventListener("click", function () {
+          const moreImages = document.getElementById("more-images");
+          if (moreImages.style.display === "none") {
+            moreImages.style.display = "flex";
+            this.textContent = "See less";
+          } else {
+            moreImages.style.display = "none";
+            this.textContent = "See more";
+          }
+        });
+
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxGmVgsymx36_iZwKeCBRZp83obY5CTioN0M3v4MuTUZE-c_qFU4IZMMepikXjWRJZBiQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      const message = document.getElementById("message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            message.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              message.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
