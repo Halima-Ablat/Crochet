@@ -340,3 +340,27 @@ display: block;
  .cart .product-info p{
   margin: 3px;
  }
+
+ /* Login */
+.login-btn{
+  width: 100%;
+  padding: 6px 8px;
+  background-color: rgb(5, 164, 154);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.login-btn:hover{
+  background-color: rgb(21, 186, 175);
+}
+
+.login-info{
+  color: rgb(5, 164, 154);;
+}
+
+.login-info a{
+  color: rgb(5, 164, 154) !important;
+}
+
