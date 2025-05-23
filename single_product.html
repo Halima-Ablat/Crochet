@@ -38,16 +38,23 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#service">Services</a>
+              <a class="nav-link" href="index.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#my-work">My Work</a>
+              <a class="nav-link" href="#my-work">Crochets</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Cart</a>
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-decoration-none text-dark"
+                href="login.html"
+                >Login</a
+              >
             </li>
           </ul>
         </div>
@@ -87,14 +94,13 @@
     </footer>
 
     <script>
-      const large_image =  document.getElementById("large-image");
+      const large_image = document.getElementById("large-image");
       const small_image = document.getElementsByClassName("small-image");
 
-      for(let i = 0; i < 4; i ++){
-        small_image[i].onclick = function(){
+      for (let i = 0; i < 4; i++) {
+        small_image[i].onclick = function () {
           large_image.src = small_image[i].src;
-        }
-        
+        };
       }
     </script>
   </body>

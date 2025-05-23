@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid mx-3">
         <a class="navbar-brand" href="#">Toyland</a>
         <button
@@ -61,66 +61,39 @@
       </div>
     </nav>
 
-    <div class="account">
-      <div class="account-info">
-        <div class="head-info">
-          <h2>Account info</h2>
-          <hr class="small-line" />
-        </div>
-        <div>
-          <p>Name <span>John</span></p>
-          <p>Email <span>john@email.com</span></p>
-        </div>
-        <div>
-          <a class="account-detail">Your orders</a>
-          <a class="account-detail mt-3">Logout</a>
-        </div>
-      </div>
-      <div class="change-password">
-        <form>
-          <div class="head-info">
-            <h2>Change Password</h2>
-            <hr class="small-line" />
-          </div>
-          <div class="password">
-            <label>Password</label>
-            <input type="text" placeholder="Password" />
-          </div>
-          <div class="password">
-            <label>Confirm Password</label>
-            <input type="email" placeholder="Password" />
-          </div>
-          <button class="password-btn">Change Password</button>
-        </form>
-      </div>
-    </div>
-
-    <section class="orders container my-5 py-5">
-      <div class="head-info">
-        <h2>Your Order</h2>
+    <div class="container my-5 py-5">
+       <div class="head-info mt-5">
+        <h2>Check Out</h2>
         <hr class="small-line" />
-      </div>  
-      <table class="mt-5 pt-5">
-        <tr>
-          <th>Product</th>
-          <th>Date</th>
-        </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="images/image 4.jpeg" />
-              <div>
-                <p>Crochet</p>
-              </div>
-            </div>
-          </td>
+      </div> 
+      <form class="check-out row gap-3">
+        <div class="col-md-6">
+          <label>Name</label><br />
+          <input class="form-control" type="text" placeholder="Name" />
+        </div>
+        <div class="col-md-6">
+          <label>Email</label><br />
+          <input class="form-control" type="email" placeholder="Email" />
+        </div>
 
-          <td>
-            <span>2025-05-22</span>
-          </td>
-        </tr>
-      </table>
-    </section>
+        <div class="col-md-6">
+          <label>Phone</label><br />
+          <input class="form-control" type="text" placeholder="Phone" />
+        </div>
+        <div class="col-md-6">
+          <label>City</label><br />
+          <input class="form-control" type="text" placeholder="City" />
+        </div>
+
+        <div class="col-md-6">
+          <label>Address</label><br />
+          <input class="form-control" type="text" placeholder="Address" />
+        </div>
+        <div class="col-md-6 text-center">
+          <button class="btn btn-primary">Checkout</button>
+        </div>
+      </form>
+    </div>
 
     <footer class="text-center">
       Copyright © Toyland.Made with💓by Adeena
