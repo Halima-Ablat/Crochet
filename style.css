@@ -48,7 +48,7 @@ body {
 }
 
 .nav-info {
-  margin-left: 60%;
+  margin-left: 66%;
 }
 
 @media (max-width: 768px) {
@@ -341,6 +341,7 @@ footer {
 }
 
 /* Login */
+
 .login-btn {
   width: 100%;
   padding: 6px 8px;
@@ -357,6 +358,8 @@ footer {
 
 .login-info {
   color: rgb(5, 164, 154);
+  display: flex;
+  justify-content: center;
 }
 
 .login-info a {
@@ -412,6 +415,7 @@ footer {
   padding: 5px 8px;
   border-radius: 5px;
   border: 1px solid;
+  outline: none;
 }
 
 .password-btn{
@@ -421,6 +425,55 @@ footer {
   background-color: rgb(5, 164, 154);
   border: none;
   color: white;
+}  
+
+/* Orders */
+
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
+.orders .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orders th {
+  text-align: left;
+  padding: 10px 30px;
+  color: white;
+  background-color: rgb(232, 111, 131);
+}
+
+.orders th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.orders th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.orders th:nth-child(2){
+  text-align: right;
+  width: 130px;
+}
+
+.orders td {
+  padding: 10px 10px;
+}
+
+.orders td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.orders td:nth-child(2){
+text-align: right;
+width: 130px;
+}
+
+/* Check Out */
 
