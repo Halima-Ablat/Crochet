@@ -47,17 +47,45 @@ body {
   transition: 0.4s ease;
 }
 
-.nav-info {
-  margin-left: 66%;
-}
-
 @media (max-width: 768px) {
   .nav-info .navbar-nav {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
   }
+}
+
+#cart-icon {
+  position: relative;
+  font-size: 1.6rem;
+  color: rgb(65, 65, 65);
+  cursor: pointer;
+}
+
+#cart-icon:hover{
+  color: #e64ac1;
+}
+
+#cart-icon[data-quantity="0"]::after {
+  content: "";
+}
+
+#cart-icon[data-quantity]::after {
+  content: attr(data-quantity);
+  position: absolute;
+  top: 0;
+  right: -11px;
+  width: 18px;
+  height: 18px;
+  background-color: rgb(65, 65, 65);
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #about {
@@ -406,26 +434,26 @@ footer {
   display: flex;
 }
 
-.password{
+.password {
   display: flex;
   flex-direction: column;
 }
 
-.password input{
+.password input {
   padding: 5px 8px;
   border-radius: 5px;
   border: 1px solid;
   outline: none;
 }
 
-.password-btn{
+.password-btn {
   margin-top: 10px;
   padding: 3px 10px;
   border-radius: 5px;
   background-color: rgb(5, 164, 154);
   border: none;
   color: white;
-}  
+}
 
 /* Orders */
 
@@ -454,7 +482,7 @@ footer {
   border-top-right-radius: 6px;
 }
 
-.orders th:nth-child(2){
+.orders th:nth-child(2) {
   text-align: right;
   width: 130px;
 }
@@ -470,10 +498,9 @@ footer {
   border-radius: 5px;
 }
 
-.orders td:nth-child(2){
-text-align: right;
-width: 130px;
+.orders td:nth-child(2) {
+  text-align: right;
+  width: 130px;
 }
 
 /* Check Out */
-
