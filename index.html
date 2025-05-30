@@ -55,7 +55,7 @@
         </div>
 
         <div class="d-flex justify-content-center align-items-center gap-3">
-          <a href="#">
+          <a href="single_product.html">
             <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
           </a>
           <a class="nav-link text-decoration-none text-dark" href="login.html"
@@ -163,105 +163,16 @@
     </div>
     <div class="mt-3" id="my-work">
       <h3 class="text-center">My Work</h3>
-      <div class="my-crochet row mx-auto container-fluid">
-        <div
-          onclick="window.location.href='single_product.html';"
-          class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12"
-        >
-          <img
-            class="image-fluid mb-3"
-            src="images/image 4.jpeg"
-            alt="crochet"
-          />
-          <div>⭐⭐⭐⭐⭐</div>
-          <p class="crochet-info">My Crochet</p>
-          <p class="crochet-info">$39.99</p>
-          <button class="shop-btn">Shop now</button>
-        </div>
-        <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-          <img
-            class="image-fluid mb-3"
-            src="images/image 4.jpeg"
-            alt="crochet"
-          />
-          <div>⭐⭐⭐⭐⭐</div>
-          <p class="crochet-info">My Crochet</p>
-          <p class="crochet-info">$39.99</p>
-          <button class="shop-btn">Shop now</button>
-        </div>
-        <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-          <img
-            class="image-fluid mb-3"
-            src="images/image 4.jpeg"
-            alt="crochet"
-          />
-          <div>⭐⭐⭐⭐⭐</div>
-          <p class="crochet-info">My Crochet</p>
-          <p class="crochet-info">$39.99</p>
-          <button class="shop-btn">Shop now</button>
-        </div>
-        <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-          <img
-            class="image-fluid mb-3"
-            src="images/image 4.jpeg"
-            alt="crochet"
-          />
-          <div>⭐⭐⭐⭐⭐</div>
-          <p class="crochet-info">My Crochet</p>
-          <p class="crochet-info">$39.99</p>
-          <button class="shop-btn">Shop now</button>
-        </div>
-        <div class="d-flex justify-content-center d-none" id="more-images">
-          <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-            <img
-              class="image-fluid mb-3"
-              src="images/image 4.jpeg"
-              alt="crochet"
-            />
-            <div>⭐⭐⭐⭐⭐</div>
-            <p class="crochet-info">My Crochet</p>
-            <p class="crochet-info">$39.99</p>
-            <button class="shop-btn">Shop now</button>
-          </div>
-          <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-            <img
-              class="image-fluid mb-3"
-              src="images/image 4.jpeg"
-              alt="crochet"
-            />
-            <div>⭐⭐⭐⭐⭐</div>
-            <p class="crochet-info">My Crochet</p>
-            <p class="crochet-info">$39.99</p>
-            <button class="shop-btn">Shop now</button>
-          </div>
-          <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-            <img
-              class="image-fluid mb-3"
-              src="images/image 4.jpeg"
-              alt="crochet"
-            />
-            <div>⭐⭐⭐⭐⭐</div>
-            <p class="crochet-info">My Crochet</p>
-            <p class="crochet-info">$39.99</p>
-            <button class="shop-btn">Shop now</button>
-          </div>
-          <div class="crochet mt-3 text-center col-lg-3 col-md-4 col-sm-12">
-            <img
-              class="image-fluid mb-3"
-              src="images/image 4.jpeg"
-              alt="crochet"
-            />
-            <div>⭐⭐⭐⭐⭐</div>
-            <p class="crochet-info">My Crochet</p>
-            <p class="crochet-info">$39.99</p>
-            <button class="shop-btn">Shop now</button>
-          </div>
-        </div>
+      <div class="my-crochet row mx-auto container-fluid js-products-grid">
+      
+        <!-- <div class="d-flex d-none js-products-grid" id="more-images">
+         
+        </div> -->
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-3">
+    <!-- <div class="d-flex justify-content-center mt-3">
       <button id="see-more-btn" class="see-more">See more</button>
-    </div>
+    </div> -->
     <div class="contact container-fluid mt-3" id="contact">
       <div class="details text-center">
         <h3 class="contact-me">Contact Me</h3>
@@ -297,37 +208,6 @@
       Copyright © Toyland.Made with💓by Adeena
     </footer>
 
-    <script>
-      document
-        .getElementById("see-more-btn")
-        .addEventListener("click", function () {
-          const moreImages = document.getElementById("more-images");
-
-          moreImages.classList.toggle("d-none");
-
-          this.textContent = moreImages.classList.contains("d-none")
-            ? "See more"
-            : "See less";
-        });
-
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxGmVgsymx36_iZwKeCBRZp83obY5CTioN0M3v4MuTUZE-c_qFU4IZMMepikXjWRJZBiQ/exec";
-      const form = document.forms["submit-to-google-sheet"];
-
-      const message = document.getElementById("message");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            message.innerHTML = "Message sent successfully!";
-            setTimeout(function () {
-              message.innerHTML = "";
-            }, 5000);
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
