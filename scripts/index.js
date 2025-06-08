@@ -1,3 +1,5 @@
+import { products } from "../data/products.js";
+
 let productsHTML = "";
 
 products.forEach((product) => {
@@ -21,7 +23,7 @@ document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 
 
-function viewProduct(productId){
+window.viewProduct =  function viewProduct(productId){
   window.location.href=`single_product.html?id=${productId}`;
 }
 
