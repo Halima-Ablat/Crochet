@@ -57,7 +57,9 @@
         </div>
 
         <div class="d-flex justify-content-center align-items-center gap-3">
-          <a href="#">
+           <a href="cart.html">
+
+
             <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
           </a>
           <a class="nav-link text-decoration-none text-dark" href="login.html"
@@ -77,12 +79,12 @@
               <h2 class="text-center mt-3 pt-3">Login</h2>
             </div>
 
-            <form class="my-3 py-3">
+            <form class="my-3 py-3" id="login">
               <div class="mb-3 w-75">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input
                   type="email"
-                  class="form-control"
+                  class="form-control email-input"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Email"
@@ -94,7 +96,7 @@
                 >
                 <input
                   type="password"
-                  class="form-control"
+                  class="form-control password-input"
                   id="exampleInputPassword1"
                   placeholder="Password"
                 />
@@ -104,7 +106,7 @@
               <div class="d-flex mt-3 login-info">
                 <p>Don't have account?</p>
                 <a class="ms-3 text-decoration-none" href="register.html"
-                  >Register</a
+                >Register</a
                 >
               </div>
             </form>
@@ -116,5 +118,19 @@
     <footer class="text-center">
       Copyright © Toyland.Made with💓by Adeena
     </footer>
+
+    <script>
+      document.getElementById("login").addEventListener("submit", function(event) {
+         event.preventDefault();
+         const email = document.querySelector(".email-input").value.trim();
+         const password = document.querySelector(".password-input").value.trim();
+         if(!email || !password){
+          alert("❌ Email and Password are required !");
+          event.preventDefault();
+         }else{
+          window.location.href = "register.html"
+         }
+      })
+    </script>
   </body>
 </html>
