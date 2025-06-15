@@ -58,7 +58,7 @@
 
         <div class="d-flex justify-content-center align-items-center gap-3">
           <a href="#">
-            <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+            <i class="bx bx-shopping-bag cart-quantity" id="cart-icon" data-quantity="0"></i>
           </a>
           <a class="nav-link text-decoration-none text-dark" href="login.html"
             >Login</a
@@ -68,11 +68,11 @@
     </nav>
 
     <section class="cart container my-5 py-5">
-      <div class="head-info mt-5 pt-5">
+      <div class="head-info py-5">
         <h2>Shopping Cart</h2>
         <hr class="small-line" />
       </div>
-      <div class="row g-5 mt-3">
+      <div class="row g-5">
         <div class="col-lg-6 col-md-12">
           <table>
             <tr>
@@ -80,37 +80,14 @@
               <th>Quantity</th>
               <th>Subtotal</th>
             </tr>
-            <tbody class="js-order-summary ">
-              
-            </tbody>
+            <tbody class="js-order-summary"></tbody>
           </table>
         </div>
 
         <div class="order-summary col-lg-6 col-md-12">
           <h4>Order Summary</h4>
-          <div>
-            <div class="d-flex justify-content-between">
-              <p>Items <span>(3):</span></p>
-              <p>$42.75</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p>Shipping & handling:</p>
-              <p>$42.75</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p>Total before tax:</p>
-              <p>$42.75</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p>Estimated tax(10%):</p>
-              <p>$42.75</p>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between">
-              <p>Order total:</p>
-              <p>$52.51</p>
-            </div>
-            <button class="btn btn-danger w-100">Place your order</button>
+          <div class="order-total">
+           
           </div>
         </div>
       </div>
