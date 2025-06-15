@@ -1,4 +1,6 @@
 import { products } from "../data/products.js";
+import { cart } from "../data/cart.js";
+
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
