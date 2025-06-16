@@ -4,7 +4,7 @@ export const products = [
     image: "images/image 4.jpeg",
     name: "Rabbit Crochet",
     rating: 5,
-    priceCents: 3999,
+    priceCents: 3990,
   },
   {
     id: "2",

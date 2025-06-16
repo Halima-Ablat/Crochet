@@ -43,7 +43,7 @@
                   >Home</a
                 >
               </li>
-               <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="index.html">Services</a>
               </li>
               <li class="nav-item">
@@ -57,7 +57,7 @@
         </div>
 
         <div class="d-flex justify-content-center align-items-center gap-3">
-           <a href="cart.html">
+          <a href="cart.html">
             <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
           </a>
           <a class="nav-link text-decoration-none text-dark" href="login.html"
@@ -72,7 +72,7 @@
         <h2>Check Out</h2>
         <hr class="small-line" />
       </div>
-      <form class="check-out row gap-3">
+      <form class="check-out row gap-3" id="checkout-form">
         <div class="col-md-6">
           <label>Name</label><br />
           <input class="form-control" type="text" placeholder="Name" />
@@ -96,7 +96,7 @@
           <input class="form-control" type="text" placeholder="Address" />
         </div>
         <div class="col-md-6 text-center">
-          <button class="btn btn-primary">Checkout</button>
+          <button type="submit" class="btn btn-primary">Checkout</button>
         </div>
       </form>
     </div>
@@ -104,5 +104,26 @@
     <footer class="text-center">
       Copyright © Toyland.Made with💓by Adeena
     </footer>
+
+    <script>
+      document
+        .getElementById("checkout-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document
+            .querySelector("input[placeholder='Name']")
+            .value.trim();
+          const email = document
+            .querySelector("input[placeholder='Email']")
+            .value.trim();
+
+          if (!name || !email) {
+            alert("❌ Name and Email are required!");
+            event.preventDefault(); // Stops form submission
+          } else {
+            window.location.href = "account.html"; // Redirect only if fields are filled
+          }
+        });
+    </script>
   </body>
 </html>
