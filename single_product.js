@@ -1,7 +1,6 @@
 import { products } from "../data/products.js";
 import { cart } from "../data/cart.js";
 
-
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
@@ -23,7 +22,7 @@ if (product) {
       <h2>${product.name}</h2>
       <p>$${(product.priceCents / 100).toFixed(2)}</p>
       <label>Quantity</label><br />
-      <input class="quantity" type="number" value="1" />
+      <input class="quantity" type="number" value="1" min="1" max="10"/>
       <a href="cart.html">
        <button class="add-btn mt-3" data-product-id="${
          product.id
@@ -35,7 +34,7 @@ if (product) {
   singleCrochet.innerHTML = `<h2>Product Not Found</h2>`;
 }
 
- function addToCart(productId) {
+ function addToCart(productId, quantityToAdd) {
   let matchingItem;
   cart.forEach((item) => {
     if (productId === item.productId) {
@@ -44,12 +43,13 @@ if (product) {
   });
 
   if (matchingItem) {
-    matchingItem.quantity += 1;
-  
+    const newTotal = matchingItem.quantity += quantityToAdd;
+    matchingItem.quantity = newTotal > 10 ? 10 : newTotal;
   } else {
     cart.push({
       productId: productId,
-      quantity: 1,
+      quantity: quantityToAdd > 10 ? 10 : quantityToAdd,
+      addedAt: new Date().toISOString()
     });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".add-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const productId = button.dataset.productId;
- 
-      addToCart(productId);
+      const quantityInput = document.querySelector(".quantity");
+      const quantityToAdd = parseInt(quantityInput.value, 10) || 1;
+      addToCart(productId, quantityToAdd);
      
     });
   });
