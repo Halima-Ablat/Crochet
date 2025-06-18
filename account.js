@@ -28,7 +28,7 @@ function orderInAccount() {
             <div class="product-info">
               <img src="${matchingProduct.image}" />
               <div>
-                <p>Crochet</p>
+                <p>${matchingProduct.name}</p>
               </div>
             </div>
           </td>
