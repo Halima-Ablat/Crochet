@@ -142,6 +142,11 @@ h3 {
 .crochet {
   padding: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crochet:hover {
+  transform: translateY(-5px); 
 }
 
 .crochet img {
@@ -153,13 +158,13 @@ h3 {
 }
 
 .crochet .shop-btn {
-  transform: translateY((50px));
+  transform: translateY(5px);
   opacity: 0;
-  transition: 0.3s all;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .crochet:hover .shop-btn {
-  transform: translateY((0px));
+  transform: translateY(0px);
   opacity: 1;
 }
 
@@ -517,3 +522,4 @@ footer {
   text-align: right;
   width: 130px;
 }
+
