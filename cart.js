@@ -46,7 +46,7 @@ function updateCartDisplay() {
             <div class="product-info">
               <img src="${matchingProduct.image}" />
               <div>
-                <p>Crochet</p>
+                <p>${matchingProduct.name}</p>
                 <small><span>$</span>${(
                   matchingProduct.priceCents / 100
                 ).toFixed(2)}</small>
