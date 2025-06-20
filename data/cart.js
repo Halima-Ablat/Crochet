@@ -90,7 +90,6 @@ function updateCartDisplay() {
           const index = cart.indexOf(cartItem);
           cart.splice(index, 1);
         }
-
         saveToStorage();
         cartQuantity();
         updateCartDisplay();
