@@ -424,6 +424,10 @@ footer {
   color: rgb(5, 164, 154) !important;
 }
 
+#login-input{
+  color: red;
+}
+
 /* Register */
 
 .login-register {
@@ -438,6 +442,9 @@ footer {
   color: rgb(5, 164, 154);
 }
 
+#error-message{
+  color: red;
+}
 /* Account */
 
 .account {
